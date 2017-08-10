@@ -7,9 +7,34 @@
 # }
 
 # 1. Complete the method below called location, that accepts a hash called weather as an argument so that it returns the value of city from the weather hash. 
-def location(weather_hash)
-	
+def location(hash) 
+	return hash[:city]
 end
+
+def description(hash)
+    return hash[:description]
+end
+
+def weather_report(hash)
+    return "The weather in #{hash[:city]} is #{hash[:description]}. The temperature is #{hash[:temperature_farenheit]} degrees Farenheit."
+end
+
+def city_weather_info(hash)
+    hash.each do |key, value|
+        puts "The #{key} is #{value}"
+    end
+end
+
+def convert_temp(hash)
+    farenheit = hash[:temperature_farenheit] - 32
+    return (farenheit * (5/9.00)).round(2) 
+end
+
+
+
+
+# puts location(weather_hash)
+
 
 # 2. Using the location method as a guide, write a  method called "description" so it returns the description from the weather hash. 
 
